@@ -19,7 +19,16 @@ public class ArraysTraining {
      * @return отсортированный массив
      */
     public int[] sort(int[] valuesArray) {
-        //TODO: implement it
+        for (int i = valuesArray.length - 1; i > 1; i--) {
+            for (int j = 0; j < i; j++) {
+                if (valuesArray[j] > valuesArray[j + 1]) {
+                    int temp = valuesArray[j];
+                    valuesArray[j] = valuesArray[j + 1];
+                    valuesArray[j + 1] = temp;
+                }
+            }
+        }
+
         return valuesArray;
     }
 
@@ -32,8 +41,20 @@ public class ArraysTraining {
      * @return максимальное число или 0
      */
     public int maxValue(int... values) {
-        //TODO: implement it
-        return 0;
+        int maximum;
+
+        if (values.length == 0) {
+            maximum = 0;
+        } else {
+            maximum = values[0];
+            for (int i = 1; i < values.length; i++) {
+                if (values[i] > maximum) {
+                    maximum = values[i];
+                }
+            }
+        }
+
+        return maximum;
     }
 
     /**
@@ -44,8 +65,13 @@ public class ArraysTraining {
      * @return входящий массив в обратном порядке
      */
     public int[] reverse(int[] array) {
-        //TODO: implement it
-        return new int[]{};
+        int[] itogMassive = new int[array.length];
+
+        for (int i = 0, j = array.length - 1; i < itogMassive.length; i++, j--) {
+            itogMassive[i] = array[j];
+        }
+
+        return itogMassive;
     }
 
     /**
@@ -59,8 +85,23 @@ public class ArraysTraining {
      * @return массив из чисел Фибоначчи
      */
     public int[] fibonacciNumbers(int numbersCount) {
-        //TODO: implement it
-        return new int[]{};
+        int[] masResult;
+
+        if (numbersCount < 1) {
+            masResult = new int[]{};
+        } else if (numbersCount == 1) {
+            masResult = new int[numbersCount];
+            masResult[0] = 0;
+        } else {
+            masResult = new int[numbersCount];
+            masResult[0] = 0;
+            masResult[1] = 1;
+            for (int i = 2; i < masResult.length; i++) {
+                masResult[i] = masResult[i - 1] + masResult[i - 2];
+            }
+        }
+
+        return masResult;
     }
 
     /**
@@ -72,7 +113,36 @@ public class ArraysTraining {
      * элементов
      */
     public int maxCountSymbol(int[] array) {
-        //TODO: implement it
-        return 0;
+        int maxCount = 1;
+        int tekushiiMaxCount = 1;
+
+        // отсортировали через пузырек
+        for (int i = array.length - 1; i > 1; i--) {
+            for (int j = 0; j < i; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+
+        // теперь находим самую высокую частотность
+        for (int i = 0; i < array.length - 1; i++) {
+
+            if (array[i] == array[i + 1]) {
+                tekushiiMaxCount = tekushiiMaxCount + 1;
+            } else {
+                tekushiiMaxCount = 1;
+                continue;
+            }
+
+            if (maxCount < tekushiiMaxCount) {
+                maxCount = tekushiiMaxCount;
+            }
+
+        }
+
+        return maxCount;
     }
 }

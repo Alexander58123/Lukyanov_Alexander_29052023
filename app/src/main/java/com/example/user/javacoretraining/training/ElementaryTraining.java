@@ -97,7 +97,7 @@ public class ElementaryTraining {
      * @param value число для изменения
      * @return новое число
      */
-    public int zeroEvenNumber(int value) {
+    public int zeroEvenNumber(int value) throws Exception {
         String temp = String.valueOf(value);
         String result = "";
         char charTemp = 0;
