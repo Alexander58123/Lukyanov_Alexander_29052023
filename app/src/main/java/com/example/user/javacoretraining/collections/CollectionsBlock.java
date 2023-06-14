@@ -2,6 +2,7 @@ package com.example.user.javacoretraining.collections;
 
 import android.support.annotation.NonNull;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -27,13 +28,19 @@ public class CollectionsBlock<T extends Comparable> {
      * @throws NullPointerException если один из параметров null
      */
 
-    // @NonNull - аннотация показывает что параметр может быть null
-    // T extends Comparable
-    // параметр типа должен поддерживать сравнение с другими экземплярами
-    // своего типа через интерфейс Comparable.
-    public List<T> collectionTask0(@NonNull List<T> firstList, @NonNull List<T> secondList) {
-        //TODO: implement it
-        return Collections.emptyList();
+    public List<T> collectionTask0(@NonNull List<T> firstList, @NonNull List<T> secondList) throws NullPointerException {
+        List<T> mergeSpiski = null;
+
+        if (firstList == null || secondList == null) {
+            throw new NullPointerException();
+        } else {
+            mergeSpiski = new ArrayList<>(firstList.size() + secondList.size());
+            mergeSpiski.addAll(firstList);
+            mergeSpiski.addAll(secondList);
+            Collections.sort(mergeSpiski, Collections.reverseOrder()); // со вторым параметром обратная сортировка
+        }
+
+        return mergeSpiski;
     }
 
     /**
@@ -43,9 +50,22 @@ public class CollectionsBlock<T extends Comparable> {
      * @return измененный список
      * @throws NullPointerException если один из параметров null
      */
-    public List<T> collectionTask1(@NonNull List<T> inputList) {
-        //TODO: implement it
-        return Collections.emptyList();
+    public List<T> collectionTask1(@NonNull List<T> inputList) throws NullPointerException {
+        List<T> result = new ArrayList<>();
+
+        if (inputList == null ) {
+            throw new NullPointerException();
+        } else {
+            result.add(inputList.get(0));
+            for (int i = 1; i < inputList.size(); i++) {
+                result.add(inputList.get(i));
+                for (int j = 0; j < i; j++) {
+                    result.add(inputList.get(j));
+                }
+            }
+        }
+
+        return result;
     }
 
     /**
@@ -56,9 +76,24 @@ public class CollectionsBlock<T extends Comparable> {
      * @return <tt>true</tt> если множества списков совпадают
      * @throws NullPointerException если один из параметров null
      */
-    public boolean collectionTask2(@NonNull List<T> firstList, @NonNull List<T> secondList) {
-        //TODO: implement it
-        return true;
+    public boolean collectionTask2(@NonNull List<T> firstList, @NonNull List<T> secondList) throws NullPointerException {
+        boolean result = false;
+
+        if (firstList == null || secondList == null) {
+            throw new NullPointerException();
+        } else {
+            if (firstList.size() == secondList.size()) { // равны, проверям
+                Collections.sort(firstList);
+                Collections.sort(secondList);
+                if (firstList.equals(secondList)) {
+                    result = true;
+                }
+            } else {
+                result = false;
+            }
+        }
+
+        return result;
     }
 
     /**
@@ -72,9 +107,35 @@ public class CollectionsBlock<T extends Comparable> {
      * @return список inputList после циклического сдвига
      * @throws NullPointerException если один из параметров null
      */
-    public List<T> collectionTask3(@NonNull List<T> inputList, int n) {
-        //TODO: implement it
-        return Collections.emptyList();
+    public List<T> collectionTask3(@NonNull List<T> inputList, int n) throws NullPointerException {
+        if (inputList == null) {
+            throw new NullPointerException();
+        }
+
+        if (n > 0) {
+            for (int i = 0; i < n; i++) {
+                List<T> temp = new ArrayList<>();
+                temp.add(inputList.get(inputList.size() - 1));
+
+                for (int j = inputList.size() - 1; j > 0; j--) {
+                    inputList.set(j, inputList.get(j - 1));
+                }
+                inputList.set(0, temp.get(0));
+            }
+        } else {
+            for (int i = 0; i > n; i--) {
+                List<T> temp = new ArrayList<>();
+                temp.add(inputList.get(0));
+
+                for (int j = 1; j < inputList.size(); j++) {
+                    inputList.set(j - 1, inputList.get(j));
+                }
+
+                inputList.set(inputList.size() -1, temp.get(0));
+            }
+        }
+
+        return inputList;
     }
 
     /**
@@ -88,9 +149,19 @@ public class CollectionsBlock<T extends Comparable> {
      * @throws NullPointerException если один из параметров null
      */
     public List<String> collectionTask4(@NonNull List<String> inputList, @NonNull String a,
-                                        @NonNull String b) {
-        //TODO: implement it
-        return Collections.emptyList();
+                                        @NonNull String b) throws NullPointerException{
+        String temp = "";
+
+        if (inputList != null|| a != null|| b != null) {
+            for (int i = 0; i < inputList.size(); i++) {
+                temp = inputList.get(i).replace(a, b);
+                inputList.set(i, temp);
+            }
+        } else {
+            throw new NullPointerException();
+        }
+
+        return inputList;
     }
 
     /*
@@ -104,5 +175,11 @@ public class CollectionsBlock<T extends Comparable> {
       Найдите средний балл каждой группы по каждому предмету.
       Определите самого старшего студента и самого младшего студентов.
       Для каждой группы найдите лучшего с точки зрения успеваемости студента.
+     */
+
+
+    /**
+     *  Решение задачи в пакете
+     *  Zadanie6
      */
 }

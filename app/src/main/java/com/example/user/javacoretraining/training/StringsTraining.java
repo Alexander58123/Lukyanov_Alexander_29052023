@@ -22,8 +22,14 @@ public class StringsTraining {
      * элементов строки text
      */
     public String getOddCharacterString(String text) {
-        //TODO: implement it
-        return "";
+        String result = "";
+
+        for (int i = 0; i < text.length(); i++) {
+            if (i % 2 == 1) {
+                result = result + text.charAt(i);
+            }
+        }
+        return result;
     }
 
     /**
@@ -37,8 +43,36 @@ public class StringsTraining {
      * вернуть пустой массив
      */
     public int[] getArrayLastSymbol(String text) {
-        //TODO: implement it
-        return new int[]{};
+        int[] result;
+        int count = 0;
+        boolean flag = false;
+
+        Character simvolEnd = text.charAt(text.length() - 1);
+
+        for (int i = 0; i < text.length() - 1; i++) {
+            if (simvolEnd.equals(text.charAt(i))) {
+                count = count + 1;
+            }
+        }
+
+        if (count > 0) {
+            result = new int[count];
+            flag = true;
+        } else {
+            result = new int[]{};
+        }
+
+        if (flag) {
+            int j = 0;
+            for (int i = 0; i < text.length() - 1; i++) {
+                if (simvolEnd.equals(text.charAt(i))) {
+                    result[j] = i;
+                    j++;
+                }
+            }
+        }
+
+        return result;
     }
 
     /**
@@ -49,8 +83,21 @@ public class StringsTraining {
      * @return количество цифр в строке
      */
     public int getNumbersCount(String text) {
-        //TODO: implement it
-        return 0;
+        int count = 0;
+        Integer temp;
+
+        for (int i = 0; i < text.length(); i++) {
+            try {
+                if ( (temp = Integer.parseInt(String.valueOf(text.charAt(i)))) instanceof Integer) {
+                    count = count + 1;
+                }
+            } catch (NumberFormatException e) {
+                continue;
+            }
+
+        }
+
+        return count;
     }
 
     /**
@@ -61,8 +108,21 @@ public class StringsTraining {
      * @return текст, где цифры заменены словами
      */
     public String replaceAllNumbers(String text) {
-        //TODO: implement it
-        return text;
+        String result = "";
+        Integer num = 0;
+        String elem = "";
+
+        for (int i = 0; i < text.length(); i++) {
+            try {
+                if ((num = Integer.parseInt(String.valueOf(text.charAt(i)))) instanceof Integer) {
+                    result = result + text;
+                }
+            } catch (NumberFormatException exception) {
+                elem = String.valueOf(text.charAt(i));
+                result = result + elem;
+            }
+        }
+        return result;
     }
 
     /**
@@ -73,8 +133,23 @@ public class StringsTraining {
      * @return измененная строка
      */
     public String capitalReverse(String text) {
-        //TODO: implement it
-        return text;
+        String result = "";
+        char elem = 0;
+
+        for (int i = 0; i < text.length(); i++) {
+            elem = text.charAt(i);
+
+            if (Character.isUpperCase(elem)) {
+                elem = Character.toLowerCase(elem);
+                result = result + elem;
+            } else {
+                elem = Character.toUpperCase(elem);
+                result = result + elem;
+            }
+
+        }
+
+        return result;
     }
 
 }
