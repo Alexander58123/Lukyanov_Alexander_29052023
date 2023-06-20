@@ -1,6 +1,5 @@
 package com.example.myapplication
 
-
 class Book(override var price: Double?, override var wordCount: Int?) : Publication {
 
     override fun getType(): String {
@@ -12,8 +11,6 @@ class Book(override var price: Double?, override var wordCount: Int?) : Publicat
             return "Novel"
         }
     }
-
-
 
 
     // переопределение сравнения объектов Book
