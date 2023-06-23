@@ -81,7 +81,6 @@ fun main() {
     doAction(action = Action.Registration())
     doAction(action = Action.Login(spisok.get(1)))
 
-
 }
 
 
