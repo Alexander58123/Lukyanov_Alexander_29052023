@@ -10,7 +10,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="109dp">
 
         <ImageView
             android:id="@+id/imageView"
@@ -33,6 +35,34 @@
                 android:layout_marginTop="50dp"
                 android:indeterminateTint="#7db354" />
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/loading"
+            android:textSize="14dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="72dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:srcCompat="@drawable/logo_mss"
+                    tools:layout_editor_absoluteX="0dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
     </LinearLayout>
 
 

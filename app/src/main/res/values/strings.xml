@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Zadanie6</string>
+    <string name="loading">Загрузка...</string>
 </resources>
