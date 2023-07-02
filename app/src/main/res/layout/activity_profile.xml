@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        app:itemTextColor="#979797"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Профайл"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="320dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
