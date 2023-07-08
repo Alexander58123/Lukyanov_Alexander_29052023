@@ -307,11 +307,18 @@
 
     </androidx.core.widget.NestedScrollView>
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_anchor="@id/BottomNavagation"
+        android:background="@color/border"
+        />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNavagation"
+        app:itemTextAppearanceActive="@dimen/design_bottom_navigation_active_text_size"
+        app:itemTextAppearanceInactive="@dimen/design_bottom_navigation_text_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -346,8 +353,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         android:backgroundTint="@color/melon"
+        app:shapeAppearanceOverlay="@style/button_circle_float"
         app:icon="@drawable/round_favorite_white"
-        app:iconSize="36dp"
+        app:iconSize="24dp"
         app:iconTint="@color/white"
         app:layout_anchor="@id/BottomNavagation"
         app:layout_anchorGravity="bottom|center"

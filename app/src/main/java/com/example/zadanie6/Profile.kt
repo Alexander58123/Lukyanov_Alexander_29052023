@@ -8,6 +8,9 @@ class Profile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+      //  val bottomNavigationView: BottomNavigationView = findViewById(R.id.BottomNavagation);
+      //  bottomNavigationView.itemIconTintList = null
     }
 
 
