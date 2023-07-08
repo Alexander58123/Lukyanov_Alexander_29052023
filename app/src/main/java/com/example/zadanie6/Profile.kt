@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
+
 class Profile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,4 +16,6 @@ class Profile : AppCompatActivity() {
     }
 
 
+
+    
 }
