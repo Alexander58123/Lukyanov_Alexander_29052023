@@ -2,6 +2,7 @@ package com.example.user.javacoretraining;
 
 import com.example.user.javacoretraining.training.ElementaryTraining;
 
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
