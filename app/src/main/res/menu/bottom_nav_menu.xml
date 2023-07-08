@@ -5,14 +5,15 @@
     <item
         android:id="@+id/news"
         android:icon="@drawable/menu"
-        android:title="Новости" />
+        android:title="Новости"
+        />
     <item
         android:id="@+id/search"
         android:icon="@drawable/search"
         android:title="Поиск" />
     <item
         android:id="@+id/head"
-        android:icon="@drawable/head"
+        android:enabled="false"
         android:title="Помочь" />
     <item
         android:id="@+id/history"
@@ -21,5 +22,6 @@
     <item
         android:id="@+id/account_circle"
         android:icon="@drawable/account_circle"
-        android:title="Профиль" />
+        android:title="Профиль"
+        android:checked="true"/>
 </menu>

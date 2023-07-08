@@ -7,4 +7,9 @@
     <string name="sfera_deyatelnodti">Сфера деятельности</string>
     <string name="sfera_more">Хирургия, травмотология</string>
     <string name="notification">Получать  push-уведомления</string>
+    <string name="vashi_druzya">Ваши друзья</string>
+    <string name="person_dmitry">Дмитрий Валерьевич</string>
+    <string name="person_evgeniy">Евгений Александров</string>
+    <string name="person_viktor">Виктор Кузнецов</string>
+    <string name="exit_accaunt">Выйти из аккаунта</string>
 </resources>
